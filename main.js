@@ -5,10 +5,16 @@ export default class Quote {
         this.render(); 
     }
 
+    getNewQuote() {
+        const btn = this.element.querySelector('#btn-reload');
+        btn.addEventListener('click', () => {
+            document.location.reload();
+        })
+    }
+
     getTemplate() {
         const quoteInfo = this.quoteData.quote;
         return `
-
             <div class="wrapper">
                 <div class="wrapper-quote">
                     <div class="quote">
@@ -23,6 +29,7 @@ export default class Quote {
                         <p>${quoteInfo.tags.map(item => `#${item}`).join(' ')}</p>
                     </div>
                 </div>
+                <button class="btn-reload" id="btn-reload">New Quote</button>
             </div>
         `
     }
@@ -34,7 +41,7 @@ export default class Quote {
         wrapper.innerHTML = this.getTemplate();
 
         this.element = wrapper.firstElementChild;
-
+        this.getNewQuote()
         console.log(this.quoteData.quote.tags);
     }
 } 

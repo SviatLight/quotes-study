@@ -61,3 +61,24 @@ body {
     color: rgb(58, 87, 255);
     font-style: italic;
 }
+
+.btn-reload {
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.btn-reload:hover {
+    background-color: #000;
+    transition: .3s ease-out;
+    color: #fff;
+    width: 110px;
+}
